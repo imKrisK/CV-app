@@ -1,0 +1,79 @@
+% Professional Resume LaTeX Template
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+\pagestyle{empty}
+
+% Custom colors
+\definecolor{primary}{HTML}{2575FC}
+\definecolor{secondary}{HTML}{6A11CB}
+\definecolor{sectionbg}{HTML}{F0F4FF}
+
+% Section formatting
+\newcommand{\sectionline}{\noindent\color{primary}\rule{\linewidth}{1pt}}
+
+\begin{document}
+
+% Background color
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[sectionbg] (current page.south west) rectangle (current page.north east);
+\end{tikzpicture}
+
+% Header
+\begin{center}
+    {\LARGE \textbf{Your Name}} \\[2pt]
+    \textcolor{secondary}{Software Engineer $\vert$ Full Stack Developer $\vert$ Web Designer} \\[2pt]
+    \href{mailto:imkrisk@icloud.com}{imKrisK@icloud.com} $\vert$ 
+    \href{https://linkedin.com/in/KristofferKelly}{linkedin.com/in/KristofferKelly} $\vert$ 
+    \href{https://github.com/imKrisK}{github.com/imKrisK}
+\end{center}
+
+\vspace{0.5em}
+\sectionline
+
+% Professional Summary
+\section*{Professional Summary}
+Results-driven developer with experience in building scalable web applications and designing user-centric interfaces.
+
+% Skills
+\section*{Skills}
+\begin{itemize}[leftmargin=*]
+    \item JavaScript, TypeScript, 
+    \item React, Node.js, Express, MongoDB, SQL
+    \item HTML5, CSS3, Figma, Bravo Studio, Tailwind CSS
+    \item REST APIs, GraphQL, AWS, Docker
+\end{itemize}
+
+% Experience
+\section*{Experience}
+\textbf{Software Engineer, Company Name} \hfill Jan 2023 -- Present\\
+\begin{itemize}[leftmargin=*]
+    \item Developed scalable backend services using Node.js and Express.
+    \item Collaborated with designers to create responsive web interfaces.
+\end{itemize}
+
+\textbf{Full Stack Developer, Another Company} \hfill Jun 2021 -- Dec 2022\\
+\begin{itemize}[leftmargin=*]
+    \item Built full stack applications with React and MongoDB.
+    \item Implemented RESTful APIs and integrated third-party services.
+\end{itemize}
+
+% Projects
+\section*{Projects}
+\textbf{Portfolio Website}
+\begin{itemize}[leftmargin=*]
+    \item Designed and developed a personal portfolio using React and Figma.
+\end{itemize}
+\textbf{Open Source Contributor}
+\begin{itemize}[leftmargin=*]
+    \item Contributed to open source projects on GitHub, focusing on UI/UX improvements.
+\end{itemize}
+
+% Education
+\section*{Education}
+B.Sc. in Computer Science, University Name, 2021
+
+\end{document}

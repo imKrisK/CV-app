@@ -1,0 +1,108 @@
+{
+  "name": "Kristoffer Kelly",
+  "title": "Permit Specialist | Operations Manager | Software Engineer",
+  "summary": "A seasoned professional with a diverse background in permit processing, operations management, and legal support. Proficient in process optimization, project management, and cross-functional team leadership. A results-oriented developer with expertise in developing scalable web applications and designing user-centric interfaces.",
+  "skills": [
+    {
+      "category": "Software Engineering",
+      "items": [
+        "Programming Languages",
+        "Data Structures and Algorithms",
+        "Software Development Life Cycle (SDLC)",
+        "Version Control (Git)",
+        "Testing and Debugging",
+        "Database Management",
+        "Object-Oriented Programming (OOP)",
+        "Adaptive Learning",
+        "Resourcefulness"
+      ]
+    },
+    {
+      "category": "Full Stack Development",
+      "items": [
+        "JavaScript", "TypeScript",
+        "React", "Node.js", "Express", "MongoDB",
+        "REST APIs", "MySQL", "AWS", "Docker"
+      ]
+    },
+    {
+      "category": "Web and UI/UX Design",
+      "items": [
+        "HTML5", "CSS3", "Figma", "Bravo Studio", "Tailwind CSS", "Bootstrap", "Material-UI"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Associate",
+      "company": "RDSolutions, Glen Allen, VA",
+      "years": "January 2024 - Present",
+      "details": [
+        "Responsible for accurately collecting and managing pricing information within a retail environment.",
+        "Operate point-of-sale systems to scan items and transmit data via the company application.",
+        "Provide support to managers in all operational tasks.",
+        "Assist in field operations, including data collection and reporting, and maintain communication between the field and other stakeholders.",
+        "Utilize mobile applications and technology to streamline data collection and reporting processes.",
+        "Ensure data accuracy and integrity through meticulous review and validation of collected information."
+
+      ]
+    },
+    {
+      "role": "Permit Specialist",
+      "company": "CO2 Monitoring, Las Vegas, NV",
+      "years": "March 2022 - October 2023",
+      "details": [
+        "Effectively communicate with various state building divisions, fire departments, and the Adjuring Home Jurisdiction regarding the standard procedure for obtaining permits for minor mechanical installations, such as bulk CO2 tanks and the company’s patented monitoring system.",
+        "Schedule field technicians to perform draft drawings of the store layout and the locations of objects, including the CO2 tank and the rooms where the monitoring system will be installed.",
+        "Obtain copies of the office drawings and recreate the floor plan using Visio Studio software.",
+        "Perform data entry, including completing online permit applications via jurisdiction websites and submitting both floor plans and permit applications through online portals. Communicate effectively with building and fire officials who require additional information. Submit and complete payments.",
+        "Prepare field technicians for installation projects by assembling a copy of the approved floor plan, which is sealed by the building and/or fire district, along with a permit that will be posted near the construction area.",
+        "Perform follow-up with field technicians during installation periods and project completions.",
+        "Manage company databases, including approved floor plans and permits, obtained from the jurisdiction’s portal. Maintain a comprehensive record of approved floor plans and permits in both a physical and virtual filing system."
+      ]
+    },
+    {
+      "role": "Operations Manager",
+      "company": "PRA LLC, San Diego, CA",
+      "years": "November 2017 - February 2022",
+      "details": [
+        "Exhibited professionalism to clients, attorneys, and managers.",
+        "Conducted managerial meetings on daily operations and high-volume projects.",
+        "Conducted interviews and managed hiring processes with HR.",
+        "Performed in-depth data analysis using advanced Excel to identify and fix process inefficiencies in 5+ departments.",
+        "Partnered with cross-functional teams for process improvement.",
+        "Coached 5+ teams to eliminate bottlenecks and boost operational efficiency."
+      ]
+    },
+    {
+      "role": "Team Lead",
+      "company": "PRA LLC, San Diego, CA",
+      "years": "March 2014 - November 2017",
+      "details": [
+        "Where I held diverse roles such as Team Lead, Paralegal, Summon & Complaint, and E-file Clerk. My responsibilities encompassed assisting managers, collaborating on team development, overseeing teams, and ensuring the accuracy of legal documents. Prior to this, I held the position of Media Clerk, where I managed incoming mail and office documents."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Certificate of Achievement in Software Engineering",
+      "institution": "UNLV, Las Vegas",
+      "date": "May 31, 2025"
+    },
+    {
+      "degree": "Professional Accreditation Certificate in Software Engineering",
+      "institution": "Institute of Data, Las Vegas",
+      "date": "May 31, 2025"
+    },
+    {
+      "degree": "Specialized Certificate in Unix System Administration",
+      "institution": "UCSD, San Diego",
+      "date": "March 14, 2013"
+    },
+    {
+      "degree": "Certificate of Achievement, in Web Server Maintenance & Security",
+      "institution": "SDCE, San Diego",
+      "date": "October 15, 2012"
+    }
+  ]
+}

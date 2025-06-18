@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cv-container">
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-pic">
+          <img src="KrisK.JPEG" alt="Profile" />
+        </div>
+        <h1 id="profile-name">Kristoffer Kelly</h1>
+        <p class="roles" id="profile-title">Professional Title</p>
+        <div class="contact-info">
+          <p><span>📧</span> <a href="mailto:imKrisK@icloud.com">imKrisK@icloud.com</a></p>
+          <p><span>🔗</span> <a href="https://www.linkedin.com/in/kristofferkelly/">linkedin.com/in/kristofferkelly</a></p>
+          <p><span>💻</span> <a href="https://github.com/imKrisK">github.com/imKrisK</a></p>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <section class="summary-section">
+        <h2><span class="icon">📝</span> Summary</h2>
+        <p id="summary"></p>
+      </section>
+      <section class="skills-section">
+        <h2><span class="icon">🛠️</span> Skills</h2>
+        <div class="skills" id="skills-list"></div>
+      </section>
+      <section class="education-section">
+        <h2><span class="icon">🎓</span> Education</h2>
+        <ul id="education-list"></ul>
+      </section>
+      <section class="experience-section">
+        <h2><span class="icon">💼</span> Experience</h2>
+        <div id="experience-list"></div>
+      </section>
+      <section class="projects-section">
+        <h2><span class="icon">🚀</span> Projects</h2>
+        <div class="project">
+          <h3>Portfolio Website</h3>
+          <ul>
+            <li>Designed and developed a personal portfolio using React and Figma.</li>
+            <li>Project for Showcases:</li>
+            <li>Local Food Truck - a mobile food ordering platform.</li>
+            <li>Podcastshow - Podcast Streaming Platform.</li>
+            <li>PokeShowCase - a Pokemon auction streaming platform.</li>
+            <li>My Portfolio - About Me</li>
+            <li>Book Writing - a book writing platform with OpenAI assistance.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>Open Source Contributor</h3>
+          <ul>
+            <li>Contributed to open source projects on GitHub, focusing on UI/UX improvements.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('profile-name').textContent = data.name;
+        document.getElementById('profile-title').textContent = data.title;
+        document.getElementById('summary').textContent = data.summary;
+        // Skills
+        const skillsList = document.getElementById('skills-list');
+        skillsList.innerHTML = '';
+        if (Array.isArray(data.skills)) {
+          data.skills.forEach(skillGroup => {
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'skill-group';
+            groupDiv.innerHTML = `<strong class='skill-category'>${skillGroup.category}</strong>`;
+            const ul = document.createElement('ul');
+            ul.className = 'skill-list';
+            skillGroup.items.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = item;
+              li.className = 'skill-tag';
+              ul.appendChild(li);
+            });
+            groupDiv.appendChild(ul);
+            skillsList.appendChild(groupDiv);
+          });
+        }
+        // Education
+        const eduList = document.getElementById('education-list');
+        eduList.innerHTML = '';
+        if (data.education) {
+          data.education.forEach(edu => {
+            const li = document.createElement('li');
+            li.className = 'education-entry';
+            li.innerHTML = `<strong>${edu.degree}</strong>, ${edu.institution} <span class='edu-date'>(${edu.date})</span>`;
+            eduList.appendChild(li);
+          });
+        }
+        // Experience
+        const expList = document.getElementById('experience-list');
+        expList.innerHTML = '';
+        data.experience.forEach(job => {
+          const div = document.createElement('div');
+          div.className = 'job';
+          let detailsHtml = '';
+          if (Array.isArray(job.details)) {
+            detailsHtml = '<ul>' + job.details.map(item => `<li>${item}</li>`).join('') + '</ul>';
+          } else {
+            detailsHtml = `<p>${job.details}</p>`;
+          }
+          div.innerHTML = `<h3>${job.role} <span>@ ${job.company}</span></h3><span class="date">${job.years}</span>${detailsHtml}`;
+          expList.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
