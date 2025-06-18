@@ -1,0 +1,11 @@
+services:
+  cv-app:
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+    ports:
+      - "3001:3001"  # Use port 3001 for development

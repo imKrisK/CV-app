@@ -1,0 +1,24 @@
+{
+  "name": "cv-app",
+  "version": "1.0.0",
+  "description": "Professional CV/Resume web application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "generate-pdf": "node resume-web/generate-pdf.js",
+    "docker:build": "docker build -t cv-app .",
+    "docker:run": "docker run -p 3001:3001 cv-app",
+    "docker:dev": "docker run -p 3001:3001 -v $(pwd):/app cv-app"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["cv", "resume", "portfolio", "web", "docker"],
+  "author": "Kristoffer Kelly",
+  "license": "MIT"
+}

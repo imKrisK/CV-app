@@ -20,6 +20,9 @@
           <p><span>🔗</span> <a href="https://www.linkedin.com/in/kristofferkelly/">linkedin.com/in/kristofferkelly</a></p>
           <p><span>💻</span> <a href="https://github.com/imKrisK">github.com/imKrisK</a></p>
         </div>
+        <div class="download-section">
+          <button id="download-pdf" class="download-btn">📄 Download PDF</button>
+        </div>
       </div>
     </aside>
     <main class="main-content">
@@ -63,7 +66,9 @@
     </main>
   </div>
   <script>
-    fetch('data.json')
+    // Try to fetch from API first, fallback to direct file access
+    fetch('/api/data')
+      .catch(() => fetch('data.json'))
       .then(response => response.json())
       .then(data => {
         document.getElementById('profile-name').textContent = data.name;
@@ -115,7 +120,41 @@
           div.innerHTML = `<h3>${job.role} <span>@ ${job.company}</span></h3><span class="date">${job.years}</span>${detailsHtml}`;
           expList.appendChild(div);
         });
-      });
+      })
+      .catch(error => console.error('Error loading data:', error));
+
+    // PDF download functionality
+    document.getElementById('download-pdf').addEventListener('click', function() {
+      const button = this;
+      button.textContent = '⏳ Generating PDF...';
+      button.disabled = true;
+      
+      fetch('/api/generate-pdf')
+        .then(response => {
+          if (response.ok) {
+            return response.blob();
+          }
+          throw new Error('PDF generation failed');
+        })
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'Kristoffer_Kelly_Resume.pdf';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+          console.error('Error generating PDF:', error);
+          alert('Failed to generate PDF. Please try again.');
+        })
+        .finally(() => {
+          button.textContent = '📄 Download PDF';
+          button.disabled = false;
+        });
+    });
   </script>
 </body>
 </html>
